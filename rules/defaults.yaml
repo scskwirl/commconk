@@ -1,0 +1,550 @@
+^Vehicle:
+	AppearsOnRadar:
+	Mobile:
+		Crushes: mine, crate
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 40
+			Road: 100
+			Bridge: 100
+			Ore: 70
+			Gems: 70
+			Beach: 40
+		ROT: 5
+	SelectionDecorations:
+	Selectable:
+		Voice: VehicleVoice
+	TargetableUnit:
+		TargetTypes: Ground, C4, Repair
+	Repairable:
+	Chronoshiftable:
+	Passenger:
+		CargoType: Vehicle
+	IronCurtainable:
+	AttackMove:
+	HiddenUnderFog:
+	GainsExperience:
+	GivesExperience:
+	DrawLineToTarget:
+	ActorLostNotification:
+	ProximityCaptor:
+		Types: Vehicle
+	GivesBounty:
+	GpsDot:
+		String: Vehicle
+	WithSmoke:
+	UpdatesPlayerStatistics:
+	CombatDebugOverlay:
+	Guard:
+	Guardable:
+	BodyOrientation:
+	EjectOnDeath:
+		PilotActor: e1
+		SuccessRate: 50
+		EjectOnGround: yes
+		EjectInAir: no
+	Huntable:
+	LuaScriptEvents:
+	Demolishable:
+	Capturable:
+		Type: vehicle
+		CaptureThreshold: 1
+		CancelActivity: True
+	CaptureNotification:
+		Notification: UnitStolen
+	ScriptTriggers:
+
+^Tank:
+	AppearsOnRadar:
+	Mobile:
+		Crushes: wall, mine, crate
+		TerrainSpeeds:
+			Clear: 80
+			Rough: 70
+			Road: 100
+			Bridge: 100
+			Ore: 70
+			Gems: 70
+			Beach: 70
+		ROT: 5
+	SelectionDecorations:
+	Selectable:
+		Voice: VehicleVoice
+	TargetableUnit:
+		TargetTypes: Ground, C4, Repair
+	Repairable:
+	Chronoshiftable:
+	Passenger:
+		CargoType: Vehicle
+	IronCurtainable:
+	AttackMove:
+	HiddenUnderFog:
+	GainsExperience:
+	GivesExperience:
+	DrawLineToTarget:
+	ActorLostNotification:
+	ProximityCaptor:
+		Types: Tank
+	GivesBounty:
+	GpsDot:
+		String: Vehicle
+	WithSmoke:
+	UpdatesPlayerStatistics:
+	CombatDebugOverlay:
+	Guard:
+	Guardable:
+	BodyOrientation:
+	EjectOnDeath:
+		PilotActor: e1
+		SuccessRate: 50
+		EjectOnGround: yes
+		EjectInAir: no
+	Huntable:
+	LuaScriptEvents:
+	Demolishable:
+	Capturable:
+		Type: vehicle
+		CaptureThreshold: 1
+		CancelActivity: True
+	CaptureNotification:
+		Notification: UnitStolen
+	ScriptTriggers:
+
+^Infantry:
+	AppearsOnRadar:
+	Health:
+		Radius: 128
+	Armor:
+		Type: None
+	RevealsShroud:
+		Range: 4c0
+	Mobile:
+		Crushes: mine, crate
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 90
+			Rough: 80
+			Road: 100
+			Bridge: 100
+			Ore: 80
+			Gems: 80
+			Beach: 80
+	SelectionDecorations:
+	Selectable:
+		Voice: GenericVoice
+	TargetableUnit:
+		TargetTypes: Ground, Infantry, Disguise
+	RenderInfantry:
+	AutoTarget:
+	AttackMove:
+	Passenger:
+		CargoType: Infantry
+	HiddenUnderFog:
+	GainsExperience:
+	GivesExperience:
+	DrawLineToTarget:
+	ActorLostNotification:
+	ProximityCaptor:
+		Types: Infantry
+	GivesBounty:
+	GpsDot:
+		String: Infantry
+	ParachuteAttachment:
+		Offset: 0,0,427
+	CrushableInfantry:
+		CrushSound: squishy2.aud
+	UpdatesPlayerStatistics:
+	CombatDebugOverlay:
+	Guard:
+	Guardable:
+	BodyOrientation:
+	SelfHealing:
+		Step: 5
+		Ticks: 100
+		HealIfBelow: 1
+		DamageCooldown: 125
+		Requireatekh: InfantryHealing
+	Huntable:
+	LuaScriptEvents:
+	ScriptTriggers:
+	DeathSounds@NORMAL:
+		InfDeaths: 1, 2, 3, 4
+	DeathSounds@BURNED:
+		DeathSound: Burned
+		InfDeaths: 5
+	DeathSounds@ZAPPED:
+		DeathSound: Zapped
+		InfDeaths: 6
+
+^Ship:
+	AppearsOnRadar:
+	Mobile:
+		Crushes: crate
+		TerrainSpeeds:
+			Water: 100
+	SelectionDecorations:
+	Selectable:
+		Voice: VehicleVoice
+	TargetableUnit:
+		TargetTypes: Ground, Water, Repair
+	HiddenUnderFog:
+	AttackMove:
+	GainsExperience:
+	GivesExperience:
+	DrawLineToTarget:
+	ActorLostNotification:
+		Notification: NavalUnitLost
+	ProximityCaptor:
+		Types: Ship
+	GivesBounty:
+	GpsDot:
+		String: Ship
+	WithSmoke:
+	UpdatesPlayerStatistics:
+	CombatDebugOverlay:
+	Guard:
+	Guardable:
+	BodyOrientation:
+	Huntable:
+	LuaScriptEvents:
+	ScriptTriggers:
+
+^Plane:
+	AppearsOnRadar:
+		UseLocation: yes
+	SelectionDecorations:
+	Selectable:
+		Voice: GenericVoice
+	TargetableAircraft:
+		TargetTypes: Air
+		GroundedTargetTypes: Ground, Repair
+	HiddenUnderFog:
+	AttackMove:
+	Guard:
+	Guardable:
+	GainsExperience:
+	GivesExperience:
+	DrawLineToTarget:
+	ActorLostNotification:
+		Notification: AirUnitLost
+	ProximityCaptor:
+		Types: Plane
+	EjectOnDeath:
+		PilotActor: E1
+		SuccessRate: 50
+		EjectOnGround: no
+		EjectInAir: yes
+	GivesBounty:
+	GpsDot:
+		String: Plane
+	UpdatesPlayerStatistics:
+	CombatDebugOverlay:
+	BodyOrientation:
+	Huntable:
+	LuaScriptEvents:
+	ScriptTriggers:
+
+^Monster:
+	Inherits: ^Infantry
+
+^Helicopter:
+	Inherits: ^Plane
+	GpsDot:
+		String: Helicopter
+
+^Building:
+	AppearsOnRadar:
+	SelectionDecorations:
+	Selectable:
+		Priority: 3
+	TargetableBuilding:
+		TargetTypes: Ground, C4, DetonateAttack
+	Building:
+		Adjacent: 7
+		Dimensions: 1,1
+		Footprint: x
+		TerrainTypes: Clear,Road
+		RequiresBaseProvider: True
+	GivesBuildableArea:
+	ExternalCapturable:
+	ExternalCapturableBar:
+	SoundOnDamageTransition:
+		DamagedSound: kaboom1.aud
+		DestroyedSound: kaboom22.aud
+	RenderBuilding:
+	WithBuildingExplosion:
+	RepairableBuilding:
+	EngineerRepairable:
+	EmitInfantryOnSell:
+		ActorTypes: e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,e6,e6,e6,e6,e6
+	MustBeDestroyed:
+	GivesExperience:
+	CaptureNotification:
+	EditorAppearance:
+		RelativeToTopLeft: yes
+	ShakeOnDeath:
+	ProximityCaptor:
+		Types: Building
+	Sellable:
+	AcceptsSupplies:
+	GivesBounty:
+	UpdatesPlayerStatistics:
+	CombatDebugOverlay:
+	Guardable:
+		Range: 3
+	BodyOrientation:
+	FrozenUnderFog:
+	GpsDot:
+		String: Structure
+	Huntable:
+	LuaScriptEvents:
+	Demolishable:
+	ScriptTriggers:
+
+^Wall:
+	AppearsOnRadar:
+	Building:
+		Dimensions: 1,1
+		Footprint: x
+		BuildSounds: placbldg.aud
+		Adjacent: 7
+		TerrainTypes: Clear,Road
+	SoundOnDamageTransition:
+		DamagedSound: sandbag2.aud
+		DestroyedSound: sandbag2.aud
+	Wall:
+		CrushClasses: wall
+	LineBuild:
+		Range: 8
+		NodeTypes: wall
+	LineBuildNode:
+		Types: wall
+	TargetableBuilding:
+		TargetTypes: Ground, DetonateAttack
+	RenderBuildingWall:
+		HasMakeAnimation: false
+		Palette: terrain
+	GivesExperience:
+	EditorAppearance:
+		RelativeToTopLeft: yes
+		UseTerrainPalette: true
+	AutoTargetIgnore:
+	ProximityCaptor:
+		Types: Wall
+	Sellable:
+	Guardable:
+	BodyOrientation:
+	FrozenUnderFog:
+	LuaScriptEvents:
+	ScriptTriggers:
+
+^TechBuilding:
+	Inherits: ^Building
+	-RepairableBuilding:
+	-EngineerRepairable:
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	Tooltip:
+		Name: Civilian Building
+	ProximityCaptor:
+		Types: CivilianBuilding
+	-AcceptsSupplies:
+	-GivesBuildableArea:
+	-Sellable:
+	-ExternalCapturable:
+	-ExternalCapturableBar:
+	FrozenUnderFog:
+		StartsRevealed: true
+	-GpsDot:
+	-MustBeDestroyed:
+
+^AmmoBox:
+	Inherits: ^TechBuilding
+	Selectable:
+		Priority: 0
+	Health:
+		HP: 10
+	Explodes:
+		Weapon: UnitExplode
+	Tooltip:
+		Name: Ammo Box
+	AutoTargetIgnore:
+	Armor:
+		Type: Light
+	TargetableBuilding:
+		TargetTypes: Ground, DetonateAttack
+
+^CivInfantry:
+	Inherits: ^Infantry
+	Selectable:
+		Voice: CivilianMaleVoice
+		Bounds: 12,17,0,-9
+	Valued:
+		Cost: 70
+	Tooltip:
+		Name: Civilian
+	Health:
+		HP: 20
+	Mobile:
+		Speed: 56
+	RevealsShroud:
+		Range: 2c0
+	Armament:
+		Weapon: Pistol
+	AttackFrontal:
+	ProximityCaptor:
+		Types: CivilianInfantry
+	-RenderInfantry:
+	RenderInfantryPanic:
+	ScaredyCat:
+
+^CivBuilding:
+	Inherits: ^TechBuilding
+	RenderBuilding:
+		Palette: terrain
+	EditorAppearance:
+		UseTerrainPalette: true
+
+^CivField:
+	Inherits: ^CivBuilding
+	-Selectable:
+	Tooltip:
+		Name: Field
+	-TargetableBuilding:
+	-Demolishable:
+	-ProximityCaptor:
+	ProximityCaptor:
+		Types: CivilianField
+
+^Tree:
+	Tooltip:
+		Name: Tree
+	RenderBuilding:
+		Palette: terrain
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Tree
+	EditorAppearance:
+		RelativeToTopLeft: yes
+		UseTerrainPalette: true
+	ProximityCaptor:
+		Types: Tree
+	Health:
+		HP: 500
+	DeadBuildingState:
+	Armor:
+		Type: Wood
+	AutoTargetIgnore:
+	BodyOrientation:
+	FrozenUnderFog:
+		StartsRevealed: true
+	LuaScriptEvents:
+	ScriptTriggers:
+
+^Husk:
+	Husk:
+		AllowedTerrain: Clear, Rough, Road, Ore, Gems, Beach
+	RenderUnit:
+	Health:
+		HP: 280
+	Armor:
+		Type: Heavy
+	HiddenUnderFog:
+	Burns:
+		Damage: 2
+	ProximityCaptor:
+		Types: Husk
+	BelowUnits:
+	BodyOrientation:
+	Chronoshiftable:
+	LuaScriptEvents:
+	TargetableUnit:
+		TargetTypes: Ground
+		RequiresForceFire: yes
+	AutoTargetIgnore:
+	Capturable:
+		Type: husk
+		Allowsquirrels: yes
+		CaptureThreshold: 1.0
+	TransformOnCapture:
+		ForceHealthPercentage: 25
+	DisabledOverlay:
+	ScriptTriggers:
+
+^HelicopterHusk:
+	Inherits: ^Husk
+	-Husk:
+	-Burns:
+	FallsToEarth:
+		Spins: True
+		Moves: False
+	-BelowUnits:
+	-TargetableUnit:
+	-Capturable:
+	-TransformOnCapture:
+
+^PlaneHusk:
+	Inherits: ^Husk
+	-Husk:
+	-Burns:
+	FallsToEarth:
+		Spins: False
+		Moves: True
+	-BelowUnits:
+	-TargetableUnit:
+	-Capturable:
+	-TransformOnCapture:
+
+^Bridge:
+	Tooltip:
+		Name: Bridge
+	BelowUnits:
+	TargetableBuilding:
+		TargetTypes: Ground, Water
+		RequiresForceFire: yes
+	Building:
+		Footprint: ____ ____
+		Dimensions: 4,2
+	Health:
+		HP: 1000
+	ProximityCaptor:
+		Types: Bridge
+	Armor:
+		Type: Concrete
+	AutoTargetIgnore:
+	BodyOrientation:
+	LuaScriptEvents:
+	ScriptTriggers:
+
+^Rock:
+	Tooltip:
+		Name: Rock
+	RenderBuilding:
+		Palette: terrain
+	Building:
+		Footprint: __ x_
+		Dimensions: 2,2
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Tree
+	EditorAppearance:
+		RelativeToTopLeft: yes
+		UseTerrainPalette: true
+	ProximityCaptor:
+		Types: Tree
+	BodyOrientation:
+	FrozenUnderFog:
+		StartsRevealed: true
+	LuaScriptEvents:
+	ScriptTriggers:
+
+^DesertCivBuilding:
+	Inherits: ^CivBuilding
+	RenderBuilding:
+		Palette: terrain
+

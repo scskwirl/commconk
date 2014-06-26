@@ -1,0 +1,26 @@
+This is a quick to-do list for people to read and see what needs to be done to polish the game a bit.
+
+PLEASE UPDATE AS NECESSARY
+
+==
+
+Reorganize each actor's traits in each YAML file (HOPEFULLY including each actor's given name instead of carry-overs from RA, such as how TLAB is Tediz Lab [techcenter], but Squirrel is still atek [allied tech].).
+
+Redo the color palettes for the following:
+Superfort icon
+C17.shp
+Apache.shp
+
+Change the color of the Chemical Warrior's "flame" into a green color to represent chemical.
+
+Test for building requirements for every actor.
+
+Lots and lots and lots of graphic edits, namely for the icons, maybe for the Chromes for each faction (squirrels get woodland camo, tediz get stone, weasels get luxury black w/ silver trim, etc)
+
+Probably redo tanya's voice to just the squirrel set.
+
+Find unique gun/explosion sound effects.
+
+Organize a whole new set of weapons (weapons.yaml) for each actor. For example, Stinger and Dragon were reused often in places and probably should not have been. Some duplications were made.
+
+Now that three teams exist, come up with a cooler icon than the split-face squirrel/tediz icon.

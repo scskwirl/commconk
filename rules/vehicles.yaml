@@ -1,0 +1,1108 @@
+V2RL:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 30
+		Prerequisites: dome
+		Owner: tediz
+		Hotkey: v
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: V2 Rocket
+		Description: Long-range rocket artillery.\n  Strong vs Infantry, Buildings\n  Weak vs Tanks, Aircraft
+	Health:
+		HP: 200
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: SCUD
+	AttackFrontal:
+	RenderUnitReload:
+	AutoTarget:
+	Explodes:
+		Weapon: SCUD
+		EmptyWeapon: UnitExplodeSmall
+
+1TNK:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 40
+		Owner: squirrels,tediz,weasels
+		Hotkey: l
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Light Tank
+		Description: A light combat tank, good for scouting.\n  Strong vs Light Vehicles\n  Weak vs Tanks, Aircraft
+	Health:
+		HP: 220
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 128
+	RevealsShroud:
+		Range: 4c0
+	Turreted:
+		ROT: 5
+	Armament:
+		Weapon: 25mm
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleFlash:
+	RenderUnit:
+	WithTurret:
+	AutoTarget:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	LeavesHusk:
+		HuskActor: 1TNK.Husk
+
+2TNK:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 41
+		Prerequisites: fix
+		Owner: squirrels,tediz,weasels
+		Hotkey: m
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Medium Tank
+		Description: A well-rounded combat tank.\n  Strong vs Tanks, Light Vehicles\n  Weak vs Infantry, Aircraft
+	Health:
+		HP: 450
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 85
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 5c0
+	Turreted:
+		ROT: 5
+	Armament:
+		Weapon: 90mm
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleFlash:
+	RenderUnit:
+	WithTurret:
+	AutoTarget:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	LeavesHusk:
+		HuskActor: 2TNK.Husk
+	Selectable:
+		Bounds: 30,30
+
+3TNK:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 42
+		Prerequisites: fix, techcenter
+		Owner: squirrels,tediz,weasels
+		Hotkey: h
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Heavy Tank
+		Description: A stronger combat tank, with dual cannons.\n  Strong vs Tanks, Light Vehicles\n  Weak vs Infantry, Aircraft
+	Health:
+		HP: 550
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 71
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 5c0
+	Turreted:
+		ROT: 5
+	Armament:
+		Weapon: 105mm
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleFlash:
+	RenderUnit:
+	WithTurret:
+	AutoTarget:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	LeavesHusk:
+		HuskActor: 3TNK.Husk
+	Selectable:
+		Bounds: 30,30
+
+4TNK:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 81
+		Prerequisites: fix,tlab
+		Owner: tediz
+		Hotkey: m
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Superheavy Tank
+		Description: Enormous and powerful tank, with\nanti-air capability.\n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
+	Health:
+		HP: 900
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 42
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		ROT: 2
+	Armament@PRIMARY:
+		Weapon: 120mm
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 171
+		RecoilRecovery: 30
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: MammothTusk
+		LocalOffset: -85,384,340, -85,-384,340
+		LocalYaw: -100,100
+		Recoil: 43
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleFlash:
+	RenderUnit:
+	WithTurret:
+	AutoTarget:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	LeavesHusk:
+		HuskActor: 4TNK.Husk
+	SelfHealing:
+		Step: 1
+		Ticks: 3
+		HealIfBelow: 50%
+		DamageCooldown: 150
+	Selectable:
+		Bounds: 44,38,0,-4
+
+ARTY:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 31
+		Prerequisites: dome
+		Owner: squirrels
+		Hotkey: r
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Artillery
+		Description: Long-range artillery.\n  Strong vs Infantry, Buildings\n  Weak vs Tanks, Aircraft
+	Health:
+		HP: 100
+	Armor:
+		Type: Light
+	Mobile:
+		ROT: 2
+		Speed: 85
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: 155mm
+		LocalOffset: 624,0,208
+		MuzzleSequence: muzzle
+	AttackFrontal:
+	WithMuzzleFlash:
+	RenderUnit:
+	Explodes:
+		Weapon: UnitExplode
+		Chance: 75
+	AutoTarget:
+
+HARV:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 10
+		Prerequisites: proc
+		Owner: squirrels,tediz,weasels
+		Hotkey: e
+	Valued:
+		Cost: 1100
+	Tooltip:
+		Name: Ore Truck
+		Description: Collects Ore and Gems for processing.\n  Unarmed
+	Selectable:
+		Priority: 7
+		Bounds: 42,42
+	Harvester:
+		Capacity: 20
+		Resources: Ore,Gems
+		UnloadTicksPerBale: 1
+		SearchFromProcRadius: 24
+		SearchFromOrderRadius: 12
+	Health:
+		HP: 600
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 85
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 4c0
+	RenderHarvester:
+		ImagesByFullness: harvempty, harvhalf, harv
+	GpsDot:
+		String: Harvester
+	LeavesHusk:
+		HuskActor: HARV.EmptyHusk
+	HarvesterHuskModifier:
+		FullHuskActor: HARV.FullHusk
+		FullnessThreshold: 50
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+
+MCV:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 90
+		Prerequisites: fix
+		Owner: squirrels,tediz,weasels
+		Hotkey: b
+	CustomBuildTimeValue:
+		Value: 2000
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Mobile Construction Vehicle
+		Description: Deploys into another Construction Yard.\n  Unarmed
+	Selectable:
+		Priority: 3
+		Bounds: 42,42
+	Health:
+		HP: 600
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 4c0
+	Transforms:
+		IntoActor: fact
+		Offset: -1,-1
+		Facing: 96
+		TransformSounds: placbldg.aud, build5.aud
+		NoTransformSounds: nodeply1.aud
+	RenderUnit:
+	MustBeDestroyed:
+	BaseBuilding:
+	LeavesHusk:
+		HuskActor: MCV.Husk
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+
+JEEP:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 22
+		Owner: squirrels
+		Hotkey: n
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Ranger
+		Description: Fast scout & anti-infantry vehicle.\n  Strong vs Infantry\n  Weak vs Tanks, Aircraft
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	Mobile:
+		ROT: 10
+		Speed: 170
+	RevealsShroud:
+		Range: 8c0
+	Turreted:
+		ROT: 10
+		Offset: 0,0,85
+	Armament:
+		Weapon: M60mg
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleFlash:
+	RenderUnit:
+	WithTurret:
+	AutoTarget:
+	Cargo:
+		Types: Infantry
+		MaxWeight: 1
+		PipCount: 1
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+
+APC:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 25
+		Owner: squirrels,tediz,weasels
+		Hotkey: c
+	Valued:
+		Cost: 850
+	Tooltip:
+		Name: Armored Personnel Carrier
+		Description: Tough infantry transport.
+	Health:
+		HP: 300
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 142
+	RevealsShroud:
+		Range: 5c0
+	#Armament: # Disabled weapon so all three teams have all three modes of transporting fairly.
+		#Weapon: M60mg
+		#LocalOffset: 0,0,171
+		#MuzzleSequence: muzzle
+	#AttackFrontal:
+	RenderUnit:
+	#WithMuzzleFlash:
+	#AutoTarget:
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+
+MNLY.AP:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 11
+		Prerequisites: fix
+		Owner: squirrels,tediz,weasels
+		Hotkey: i
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Anti-Personnel Minelayer
+		Description: Lays anti-personnel mines.\nCan detect mines.\n  Unarmed
+	Health:
+		HP: 100
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 128
+	RevealsShroud:
+		Range: 5c0
+	RenderUnit:
+		Image: MNLY
+	Minelayer:
+		Mine: MINP
+	MineImmune:
+	LimitedAmmo:
+		Ammo: 3
+	DetectCloaked:
+		Range: 5
+		CloakTypes: Mine
+	RenderDetectionCircle:
+	Explodes:
+		Weapon: APMine
+
+MNLY.AT:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 12
+		Prerequisites: fix
+		Owner: squirrels,tediz,weasels
+		Hotkey: i
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Anti-Tank Minelayer
+		Description: Lays anti-tank mines.\nCan detect mines.\n  Unarmed
+	Health:
+		HP: 100
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 128
+	RevealsShroud:
+		Range: 5c0
+	RenderUnit:
+		Image: MNLY
+	Minelayer:
+		Mine: MINV
+	MineImmune:
+	LimitedAmmo:
+		Ammo: 3
+	DetectCloaked:
+		Range: 5
+		CloakTypes: Mine
+	RenderDetectionCircle:
+	Explodes:
+		Weapon: ATMine
+
+TRUK:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 91
+		Prerequisites: weap
+		Owner: squirrels,tediz,weasels
+		Hotkey: u
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Supply Truck
+		Description: Transports cash to other players.\n  Unarmed
+	Health:
+		HP: 110
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 128
+	RevealsShroud:
+		Range: 3c0
+	RenderUnit:
+	SupplyTruck:
+		Payload: 500
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+
+MGG:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 50
+		Prerequisites: stek
+		Owner: weasels
+		Hotkey: y
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Mobile Gap Generator
+		Description: Regenerates the shroud nearby, \nobscuring the area.\n  Unarmed
+	Health:
+		HP: 220
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 85
+	RenderUnit:
+	WithIdleOverlay@SPINNER:
+		Offset: -299,0,171
+		Sequence: spinner
+	RevealsShroud:
+		Range: 6c0
+	CreatesShroud:
+		Range: 6c0
+	RenderShroudCircle:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	LeavesHusk:
+		HuskActor: MGG.Husk
+
+MRJ:
+	Inherits: ^Vehicle
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Mobile Radar Jammer
+		Description: Jams nearby enemy radar domes\nand deflects incoming missiles.\nCan detect cloaked units.\n  Unarmed
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 51
+		Prerequisites: atek
+		Owner: squirrels
+		Hotkey: k
+	Health:
+		HP: 220
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		Range: 6c0
+	RenderUnit:
+	WithIdleOverlay@SPINNER:
+		Sequence: spinner
+		Offset: -256,0,256
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	JamsRadar:
+		Range: 15
+	JamsMissiles:
+		Range: 4
+		AlliedMissiles: False
+	RenderJammerCircle:
+	DetectCloaked:
+		Range: 6
+
+TTNK:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 44
+		Prerequisites: tsla,tlab
+		Owner: tediz
+		Hotkey: t
+	Valued:
+		Cost: 1350
+	Tooltip:
+		Name: Tesla Tank
+		Description: Tank with mounted tesla coil.\n  Strong vs Infantry, Vehicles\n  and Buildings  \n  Weak vs Aircraft
+	Health:
+		HP: 400
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 113
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 7c0
+	Armament:
+		Weapon: TTankZap
+		LocalOffset: 0,0,213
+	AttackFrontal:
+	RenderUnit:
+	WithIdleOverlay@SPINNER:
+		Sequence: spinner
+	Selectable:
+		Bounds: 28,28,0,0
+	AutoTarget:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+
+FTRK:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 23
+		Owner: tediz
+		Hotkey: k
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Flak Truck
+		Description: Mobile unit with mounted Flak Cannon.\n  Strong vs Light Vehicles, Aircraft  \n  Weak vs Tanks
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	Mobile:
+		ROT: 10
+		Speed: 128
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		ROT: 10
+		Offset: -298,0,298
+	Armament:
+		Weapon: FLAK-23
+		Recoil: 85
+		LocalOffset: 512,0,192
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleFlash:
+	RenderUnit:
+	WithTurret:
+	AutoTarget:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	Selectable:
+		Bounds: 28,28,0,0
+	Cargo:
+		Types: Infantry
+		MaxWeight: 3
+		PipCount: 3
+
+DTRK:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 83
+		Prerequisites: weap,stek
+		Owner: weasels
+		Hotkey: o
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Demolition Truck
+		Description: Demolition Truck, actively armed with\nexplosives.\n  Strong vs Everything\n  Weak vs Everything
+	Health:
+		HP: 50
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		Range: 3c0
+	RenderUnit:
+	Explodes:
+		Weapon: MiniNuke
+		EmptyWeapon: MiniNuke
+	DemoTruck:
+	-IronCurtainable:
+	Chronoshiftable:
+		ExplodeInstead: yes
+
+CTNK:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 80
+		Prerequisites: weap,atek,pdox
+		Owner: squirrels
+		Hotkey: j
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Chrono Tank
+		Description: Chrono Tank, teleports to areas\nwithin range.\n  Strong vs Vehicles, Buildings\n  Weak vs Aircraft
+	Selectable:
+		Bounds: 28,28
+	Health:
+		HP: 400
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 113
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 6c0
+	RenderUnit:
+	AutoTarget:
+	Armament@PRIMARY:
+		Weapon: APTusk
+		LocalOffset: 0,-171,0
+		LocalYaw: 100
+	Armament@SECONDARY:
+		Weapon: APTusk
+		LocalOffset: 0,171,0
+		LocalYaw: -100
+	AttackFrontal:
+	PortableChrono:
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+
+QTNK:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 82
+		Prerequisites: weap,fix,tlab
+		Owner: tediz
+		Hotkey: q
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: MAD Tank
+		Description: Deals seismic damage to nearby vehicles\nand structures.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry
+	Health:
+		HP: 900
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 56
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 6c0
+	Selectable:
+		Bounds: 44,38,0,-4
+	RenderUnit:
+	Explodes:
+		Weapon: UnitExplodeSmall
+	MadTank:
+	-EjectOnDeath:
+	TargetableUnit:
+		TargetTypes: Ground, MADTank, Repair
+
+STNK:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 26
+		Prerequisites: stek
+		Owner: weasels
+		Hotkey: p
+	Valued:
+		Cost: 1350
+	Tooltip:
+		Name: Phase Transport
+		Description: Lightly armored infantry transport\nwhich can cloak. Can detect cloaked units.\n  Strong vs Light Vehicles\n  Weak vs Aircraft
+	Selectable:
+		Bounds: 28,28
+	Health:
+		HP: 300
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 113
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 6c0
+	RenderUnit:
+	AutoTarget:
+		InitialStance: ReturnFire
+	Armament:
+		Weapon: APTusk
+		LocalOffset: 400,0,0
+	Turreted:
+		ROT: 5
+	AttackTurreted:
+	WithTurret:
+	Cargo:
+		Types: Infantry
+		MaxWeight: 3
+		PipCount: 3
+	Cloak:
+		InitialDelay: 125
+		CloakDelay: 250
+		UncloakOnUnload: True
+	DetectCloaked:
+		Range: 6
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+
+HUMV:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 24
+		Owner: squirrels
+		Prerequisites: weap,dome
+		Hotkey: n
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Humvee
+		Description: Scout vehicle with tougher armor,\nbut slower speed.\n  Strong vs Infantry\n  Weak vs Tanks, Aircraft
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	Mobile:
+		ROT: 10
+		Speed: 100
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		ROT: 10
+		Offset: 0,0,85
+	Armament:
+		Weapon: hmg_humv
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleFlash:
+	RenderUnit:
+		Image: humv
+	WithTurret:
+	AutoTarget:
+	Cargo:
+		Types: Infantry
+		MaxWeight: 3
+		PipCount: 3
+
+BGGY:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 21
+		Owner: weasels
+		Hotkey: u
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Combat Buggy
+		Description: Very fast and very cheap, but fragile.\n  Strong vs Infantry\n  Weak vs Tanks, Aircraft
+	Health:
+		HP: 135
+	Armor:
+		Type: Light
+	Mobile:
+		ROT: 12
+		Speed: 200
+	RevealsShroud:
+		Range: 8c0
+	Turreted:
+		ROT: 10
+		Offset: 0,0,85
+	Armament:
+		Weapon: hmg_bggy
+	AttackTurreted:
+	WithMuzzleFlash:
+	RenderUnit:
+	WithTurret:
+	AutoTarget:
+		InitialStance: Defend
+
+FTNK:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 45
+		Prerequisites: weap,ftur
+		Owner: tediz
+		Hotkey: d
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Flame Tank
+		Description: Tank that spews napalm. \n Strong vs infantry, buildings.
+	Health:
+		HP: 450
+	Armor:
+		Type: Heavy
+	Mobile:
+		ROT: 5
+		Speed: 60
+		Crushes: wall, atmine, crate, infantry
+	RevealsShroud:
+		Range: 4c0
+	Armament:
+		Weapon: Flamer
+		LocalOffset: 720,0,80
+	AttackFrontal:
+	RenderUnit:
+		Image: FTNK
+	Explodes:
+		Weapon: UnitExplode
+		Chance: 75
+	AutoTarget:
+		InitialStance: Defend
+		
+MLRS:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 32
+		Prerequisites: dome
+		Owner: weasels
+		Hotkey: l
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Missile Pod Truck
+		Description: Long-Range and Anti-Aircraft\nMissile Launcher.
+	Health:
+		HP: 200
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+		Crushes: wall, atmine, crate, infantry
+	RevealsShroud:
+		Range: 5c0
+	Turreted:
+		ROT: 2
+		Offset: -256,0,128
+		AlignWhenIdle: true
+	Armament:
+		Weapon: MissilePod
+		FireDelay: 1
+		LocalOffset: 213,128,0, 213,-128,0
+	AttackTurreted:
+	RenderUnit:
+		Image: MLRS
+	WithTurret:
+		AimSequence: aim
+	-AttackMove:
+	AutoTarget:
+		InitialStance: Defend
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+
+STLT:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 46
+		Prerequisites: dome
+		Owner: weasels
+		Hotkey: w
+	Valued:
+		Cost: 950
+	Tooltip:
+		Name: Stealth Tank
+		Description: Rocket tank with cloak ability. \nHighly effective against vehicles. \nDetects cloaked units.
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	Mobile:
+		ROT: 10
+		Speed: 125
+		Crushes: wall, atmine, crate, infantry
+	RevealsShroud:
+		Range: 8c0
+	Armament:
+		Weapon: APTusk
+	AttackFrontal:
+	RenderUnit:
+		Image: STLT
+	Cloak:
+		InitialDelay: 0
+		CloakDelay: 50
+		CloakSound: trans1.aud
+		UncloakSound: trans1.aud
+	DetectCloaked:
+		Range: 4
+	RenderDetectionCircle:
+	Explodes:
+		Weapon: UnitExplode
+		Chance: 75
+	AutoTarget:
+		InitialStance: HoldFire
+
+BIKE:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 20
+		Prerequisites:
+		Owner: weasels
+		Hotkey: b
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Recon Bike
+		Description: Very fast but very fragile. \nExcellent view range for scouting. \nDevastating in large numbers. \nDetects cloaked units.
+	Health:
+		HP: 115
+	Armor:
+		Type: Light
+	Mobile:
+		ROT: 20
+		Speed: 250
+	RevealsShroud:
+		Range: 12c0
+	Armament:
+		Weapon: Dragon
+	AttackFrontal:
+	RenderUnit:
+		Image: BIKE
+	Explodes:
+		Weapon: UnitExplode
+		Chance: 75
+	AutoTarget:
+		InitialStance: Defend
+	DetectCloaked:
+		Range: 4
+	RenderDetectionCircle:
+
+TDES:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 47
+		Prerequisites: weap,dome
+		Owner: squirrels
+		Hotkey: r
+	Valued:
+		Cost: 950
+	Tooltip:
+		Name: Tank Destroyer
+		Description: Vehicle with powerful anti-tank rounds.\n Strong vs Infantry, Buildings\n  Weak vs Tanks, Aircraft
+	Health:
+		HP: 100
+	Armor:
+		Type: Light
+	Mobile:
+		ROT: 2
+		Speed: 85
+	RevealsShroud:
+		Range: 5c0
+	Armament:
+		Weapon: TankDestroy
+		LocalOffset: 624,0,208
+		MuzzleSequence: muzzle
+	AttackFrontal:
+	WithMuzzleFlash:
+	RenderUnit:
+		Image: ARTY
+	Explodes:
+		Weapon: UnitExplode
+		Chance: 75
+	AutoTarget:
+
+MSAM:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 49
+		Prerequisites: weap,dome
+		Owner: squirrels
+		Hotkey: l
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Mobile SAM Truck
+		Description: Long Range SAM truck.
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+		Crushes: wall, atmine, crate, infantry
+	RevealsShroud:
+		Range: 4c0
+	Turreted:
+		ROT: 2
+		Offset: -128,0,128
+		AlignWhenIdle: true
+	Armament:
+		Weapon: Patriot
+		FireDelay: 2
+		LocalOffset: 0,-171,0, 0,171,0
+	AttackTurreted:
+	RenderUnit:
+	WithTurret:
+		AimSequence: aim
+	-AttackMove:
+	AutoTarget:
+		InitialStance: Defend
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	RenderRangeCircle:

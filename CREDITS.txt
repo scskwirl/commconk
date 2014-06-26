@@ -1,0 +1,13 @@
+Credits go to the following parties:
+
+Westwood for making Command & Conquer happen.
+
+EA for releasing the games for free for us modders to use.
+
+Rareware for the Conker's Bad Fur Day inspiration and image/sound resources.
+
+The OpenRA team for making this wonderful piece of software to mod and play on, and helping teach us how to mod with it.
+
+Kanecvr, who made the "Tiberian Origins" mod used to get the GDI/Nod actors into the mod, because I had way too much trouble converting palettes. He also has nifty actors of his own in his mod but they aren't used here. Go try them out; it's fun.
+
+Whoever else contributes to this.

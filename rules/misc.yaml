@@ -1,0 +1,274 @@
+MINP:
+	Mine:
+		CrushClasses: mine
+		DetonateClasses: mine
+		AvoidFriendly: no
+	Explodes:
+		Weapon: APMine
+	Health:
+		HP: 100
+	Armor:
+		Type: Light
+	RenderSimple:
+	BelowUnits:
+	Cloak:
+		CloakSound:
+		UncloakSound:
+		Palette:
+		CloakTypes: Mine
+	Tooltip:
+		Name: Mine
+	ProximityCaptor:
+		Types: Mine
+	TargetableUnit:
+		TargetTypes: Ground
+	BodyOrientation:
+	Immobile:
+		OccupiesSpace: true
+
+MINV:
+	Mine:
+		CrushClasses: mine
+		DetonateClasses: mine
+		AvoidFriendly: no
+	Explodes:
+		Weapon: ATMine
+	Health:
+		HP: 100
+	Armor:
+		Type: Light
+	RenderSimple:
+	BelowUnits:
+	Cloak:
+		CloakSound:
+		UncloakSound:
+		Palette:
+		CloakTypes: Mine
+	Tooltip:
+		Name: Mine
+	ProximityCaptor:
+		Types: Mine
+	TargetableUnit:
+		TargetTypes: Ground
+	BodyOrientation:
+	Immobile:
+		OccupiesSpace: true
+
+CRATE:
+	Tooltip:
+		Name: Crate
+	Crate:
+		Lifetime: 120
+		TerrainTypes: Clear, Rough, Road, Water, Ore, Beach
+	GiveCashCrateAction:
+		Amount: 1000
+		SelectionShares: 50
+		UseCashTick: yes
+	LevelUpCrateAction:
+		SelectionShares: 40
+	ExplodeCrateAction@fire:
+		Weapon: CrateNapalm
+		SelectionShares: 5
+	ExplodeCrateAction@boom:
+		Weapon: CrateExplosion
+		SelectionShares: 5
+	HideMapCrateAction:
+		SelectionShares: 5
+		Effect: hide-map
+	HealUnitsCrateAction:
+		Notification: heal2.aud
+		SelectionShares: 2
+		Effect: heal
+	RevealMapCrateAction:
+		SelectionShares: 1
+		Effect: reveal-map
+	SupportPowerCrateAction@parabombs:
+		SelectionShares: 5
+		Proxy: powerproxy.parabombs
+		Effect: parabombs
+	GiveMcvCrateAction:
+		SelectionShares: 2
+		NoBaseSelectionShares: 100
+		Unit: mcv
+	GiveUnitCrateAction@jeep:
+		SelectionShares: 7
+		Unit: jeep
+	GiveUnitCrateAction@arty:
+		SelectionShares: 6
+		Unit: arty
+	GiveUnitCrateAction@v2rl:
+		SelectionShares: 6
+		Unit: v2rl
+	GiveUnitCrateAction@1tnk:
+		SelectionShares: 5
+		Unit: 1tnk
+	GiveUnitCrateAction@2tnk:
+		SelectionShares: 4
+		Unit: 2tnk
+	GiveUnitCrateAction@3tnk:
+		SelectionShares: 4
+		Unit: 3tnk
+	GiveUnitCrateAction@4tnk:
+		SelectionShares: 3
+		Unit: 4tnk
+	RenderSprites:
+		Palette: effect
+	WithCrateBody:
+		Images: scrate
+		XmasImages: xcratea, xcrateb, xcratec, xcrated
+	Selectable:
+		Selectable: false
+		Bounds: 15,15,-1,-1
+	ProximityCaptor:
+		Types: Crate
+	Passenger:
+	BodyOrientation:
+
+CAMERA:
+	Immobile:
+		OccupiesSpace: false
+	Health:
+		HP: 1000
+	RevealsShroud:
+		Range: 10c0
+	ProximityCaptor:
+		Types: Camera
+	BodyOrientation:
+	DetectCloaked:
+		Range: 10
+
+FLARE:
+	Immobile:
+		OccupiesSpace: false
+	Health:
+		HP: 1000
+	RevealsShroud:
+		Range: 3c0
+	RenderFlare:
+		Image: smokland
+	HiddenUnderFog:
+	Tooltip:
+		Name: Flare
+	ProximityCaptor:
+		Types: Flare
+	BodyOrientation:
+
+MINE:
+	Tooltip:
+		Name: Ore Mine
+	RenderBuilding:
+		Palette: terrain
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Ore
+	EditorAppearance:
+		RelativeToTopLeft: yes
+		UseTerrainPalette: yes
+	AutoTargetIgnore:
+	BodyOrientation:
+	SeedsResource:
+	BelowUnits:
+
+RAILMINE:
+	Tooltip:
+		Name: Gem Mine
+	RenderBuilding:
+		Palette: terrain
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	AppearsOnRadar:
+	RadarColorFromTerrain:
+		Terrain: Gems
+	EditorAppearance:
+		RelativeToTopLeft: yes
+		UseTerrainPalette: yes
+	AutoTargetIgnore:
+	BodyOrientation:
+	SeedsResource:
+		ResourceType: Gems
+	BelowUnits:
+
+QUEE:
+	Tooltip:
+		Name: Queen Ant
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	RenderBuilding:
+	AppearsOnRadar:
+	BodyOrientation:
+	EditorTilesetFilter:
+		RequireTilesets: INTERIOR
+	EditorAppearance:
+		RelativeToTopLeft: yes
+		UseTerrainPalette: true
+
+LAR1:
+	Tooltip:
+		Name: Ant Larva
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	RenderBuilding:
+		Palette: terrain
+	AppearsOnRadar:
+	BodyOrientation:
+	EditorTilesetFilter:
+		RequireTilesets: INTERIOR
+	EditorAppearance:
+		RelativeToTopLeft: yes
+		UseTerrainPalette: true
+
+LAR2:
+	Tooltip:
+		Name: Ant Larvae
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+	RenderBuilding:
+		Palette: terrain
+	AppearsOnRadar:
+	BodyOrientation:
+	EditorTilesetFilter:
+		RequireTilesets: INTERIOR
+	EditorAppearance:
+		RelativeToTopLeft: yes
+		UseTerrainPalette: true
+
+powerproxy.parabombs:
+	AirstrikePower:
+		Icon: parabombs
+		Description: Parabombs (Single Use)
+		LongDesc: A Badger drops a load of parachuted\nbombs on your target.
+		OneShot: yes
+		AllowMultiple: yes
+		UnitType: badr.bomber
+		SelectTargetSound: slcttgt1.aud
+		FlareActor: flare
+
+powerproxy.sonarpulse:
+	SonarPulsePower:
+		Icon: sonar
+		Description: Sonar Pulse (Single Use)
+		LongDesc: Reveals all submarines on the map for a \nshort time.
+		AllowMultiple: yes
+		OneShot: yes
+		EndChargeSound: pulse1.aud
+		SelectTargetSound: slcttgt1.aud
+
+mpspawn:
+	Immobile:
+		OccupiesSpace: false
+	RenderEditorOnly:
+	BodyOrientation:
+
+waypoint:
+	Immobile:
+		OccupiesSpace: false
+	RenderEditorOnly:
+	BodyOrientation:
+

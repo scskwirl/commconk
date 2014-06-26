@@ -1,0 +1,1889 @@
+HQ:
+	RequiresPower:
+	CanPowerDown:
+	Inherits: ^Building
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 80
+		Prerequisites: dome,atek
+		Owner: squirrels
+		Hotkey: r
+		BuildLimit: 1
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Comms Center
+		Description: Provides powerful air support access.
+	Building:
+		Power: -40
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	Bib:
+	ProvidesRadar:
+	IronCurtainable:
+	ParatroopersPower:
+		Icon: paratroopers
+		ChargeTime: 180
+		Description: Paratroopers
+		LongDesc: A bomber drops a group of infantry\nanywhere on the map.
+		SelectTargetSound: slcttgt1.aud
+		DropItems: E1,E1,E1,E1,E1,E3,E3,E3,E3,E3
+		UnitType: c17
+	AirstrikePower@parabombs:
+		Icon: parabombs
+		ChargeTime: 360
+		Description: Parabombs
+		LongDesc: Bombers drop a load of parachuted\nbombs on your target.
+		AllowMultiple: yes
+		UnitType: badr.bomber
+		SelectTargetSound: slcttgt1.aud
+		DisplayTimer: True
+		DisplayRadarPing: True
+		CameraActor: camera
+		SquadSize: 3
+	#
+	# The following AirstrikePower: trait below has been blocked out because there is a current limitation.
+	# There is no way to have two different versions of the airstrikes, as they share the same name.
+        # This one is supposed to mimic CNC's A10 Airstrike.
+	# It also doesn't help that for some reason it concentrates on a specific location instead of in a long line of attack.
+	# It is preserved here for future implementation.
+	#
+	#AirstrikePower@airstrike:
+	#	Icon: airstrike
+	#	ChargeTime: 360
+	#	Description: Air Strike
+	#	LongDesc: A group of planes bombard your target\nwith cannons and bombs.
+	#	AllowMultiple: yes
+	#	UnitType: a10.bomber
+	#	SelectTargetSound: slcttgt1.aud
+	#	DisplayTimer: True
+	#	DisplayRadarPing: True
+	#	CameraActor: camera
+	#	SquadSize: 3
+	#
+	Infiltratable:
+		Type: Exploration
+	InfiltrateForExploration:
+
+EYE:
+	Inherits: ^Building
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 100
+		Prerequisites: dome,stek
+		Owner: weasels
+		Hotkey: y
+		BuildLimit: 1
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Ion Cannon Station
+		Description: Provides access to the Ion Cannon weapon.
+	Building:
+		Power: -200
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	Bib:
+	ProvidesRadar:
+	IronCurtainable:
+	IonCannonPower:
+		Icon: ioncannon
+		ChargeTime: 270
+		DisplayTimer: True
+		Description: Goldeye Ion Cannon # Attributed to the fact that Rare did program Goldeneye, as well as Conker.
+		LongDesc: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
+		LaunchSound: ion1.aud
+		SelectTargetSound: select1.aud
+		DisplayRadarPing: True
+	CanPowerDown:
+	RequiresPower:
+	SupportPowerChargeBar:
+
+GWEP: 
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 40
+		Prerequisites: tlab
+		Owner: tediz
+		Hotkey: w
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Bioengineering Bay
+		Description: Produces monsters.
+	Building:
+		Power: -30
+		Footprint: ___ xxx ===
+		Dimensions: 3,3
+	Health:
+		HP: 2000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Bib:
+	-RenderBuilding:
+	RenderBuildingWarFactory:
+		Image: GWEP
+	RallyPoint:
+		RallyPoint: 0,3
+	Exit:
+		SpawnOffset: 213,-128,0
+		ExitCell: 1,2
+	Production:
+		Produces: Monster
+	PrimaryBuilding:
+	IronCurtainable:
+	ProductionBar:
+
+OBLI:
+	Inherits: ^Building
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Laser Tower
+		Description: Advanced base defense with a powerful laser blast.
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 60
+		Prerequisites: tlab
+		Owner: tediz
+	Building:
+		Power: -150
+		Footprint: _ x
+		Dimensions: 1,2
+	RequiresPower:
+	DisabledOverlay:
+	-GivesBuildableArea:
+	Health:
+		HP: 600
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	Bib:
+		HasMinibib: Yes
+	RenderBuildingCharge:
+		ChargeAudio: obelpowr.aud
+	Armament:
+		Weapon: Laser
+		LocalOffset: 0,0,725
+		FireDelay: 0
+	AttackCharge:
+		ReloadTime: 40
+		InitialChargeDelay: 50
+	AutoTarget:
+	-RenderBuilding:
+	RenderRangeCircle:
+	-EmitInfantryOnSell:
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 5
+
+TLAB:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 100
+		Prerequisites: weap,dome
+		Owner: tediz
+		Hotkey: c
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Tediz Laboratory
+		Description: Provides advanced Tediz technologies.
+	ProvidesCustomPrerequisite:
+		Prerequisite: techcenter
+	Building:
+		Power: -80
+		Footprint: xx xx
+		Dimensions: 2,2
+	RenderBuilding:
+		Image: BIO
+	Health:
+		HP: 650
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	Bib:
+	IronCurtainable:
+	DeadBuildingState:
+	SpyPlanePower:
+		Icon: spyplane
+		ChargeTime: 180
+		Description: Spy Plane
+		LongDesc: Reveals an area of the map\nand cloaked enemy units.
+		SelectTargetSound: slcttgt1.aud
+		EndChargeSound: spypln1.aud
+
+MISS:
+	Inherits: ^Building
+	RenderBuilding:
+	Building:
+		Power: -80
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Tooltip:
+		Name: Superfort
+		Description: Heavily-armored building with many gunports.
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 1000
+		Owner: squirrels
+		Prerequisites: atek
+	-GivesBuildableArea:
+	Valued:
+		Cost: 2500
+	Health:
+		HP: 2000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Cargo:
+		Types: Infantry
+		MaxWeight: 10
+		PipCount: 10
+		InitialUnits: e1,e3
+	-EmitInfantryOnSell:
+	DrawLineToTarget:
+	AttackGarrisoned:
+		Armaments: garrisoned
+		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 86, 86, 86, 86, 86, 86
+	RenderRangeCircle:
+		FallbackRange: 6c0
+	AutoTarget:
+	IronCurtainable:
+	-AcceptsSupplies:
+	Turreted:
+		ROT: 255
+	BodyOrientation:
+		QuantizedFacings: 8
+
+MSLO:
+	Inherits: ^Building
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Missile Silo
+		Description: Provides an atomic bomb.\nSpecial Ability: Atom Bomb\n\nMaximum 1 can be built.
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 90
+		Prerequisites: techcenter
+		Owner: tediz
+		BuildLimit: 1
+		Hotkey: m
+	Building:
+		Power: -100
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	IronCurtainable:
+	NukePower:
+		Icon: abomb
+		ChargeTime: 540
+		Description: Atom Bomb
+		LongDesc: Launches a devastating atomic bomb\nat a target location.
+		BeginChargeSound: aprep1.aud
+		EndChargeSound: aready1.aud
+		SelectTargetSound: slcttgt1.aud
+		InsufficientPowerSound: nopowr1.aud
+		IncomingSound: alaunch1.aud
+		LaunchSound:
+		MissileWeapon: atomic
+		SpawnOffset: 0,427,0
+		DisplayTimer: True
+		DisplayRadarPing: True
+		CameraActor: camera
+	CanPowerDown:
+	RequiresPower:
+	DisabledOverlay:
+	SupportPowerChargeBar:
+
+GAP:
+	Inherits: ^Building
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Gap Generator
+		Description: Obscures the enemy's view with shroud.
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 72
+		Prerequisites: dome,stek
+		Owner: weasels
+		Hotkey: g
+	Building:
+		Power: -60
+		Footprint: _ x
+		Dimensions: 1,2
+	RequiresPower:
+	CanPowerDown:
+	DisabledOverlay:
+	RenderBuilding:
+		PauseOnLowPower: yes
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	Bib:
+		HasMinibib: Yes
+	CreatesShroud:
+		Range: 6c0
+	IronCurtainable:
+	RenderShroudCircle:
+
+SPEN:
+	Inherits: ^Building
+	Infiltratable:
+		Type: SupportPower
+	InfiltrateForSupportPower:
+		Proxy: powerproxy.sonarpulse
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Sub Pen
+		Description: Produces and repairs submarines and\ntransports.
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 50
+		Prerequisites: anypower
+		Owner: squirrels,tediz,weasels
+		Hotkey: y
+	TargetableBuilding:
+		TargetTypes: Ground, Water
+	Building:
+		Power: -30
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+		Adjacent: 8
+		TerrainTypes: Water
+	-GivesBuildableArea:
+	Health:
+		HP: 1000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 4c0
+	Exit@1:
+		SpawnOffset: 0,-213,0
+		Facing: 96
+		ExitCell: -1,2
+	Exit@2:
+		SpawnOffset: 0,-213,0
+		Facing: 160
+		ExitCell: 3,2
+	Exit@3:
+		SpawnOffset: 0,0,0
+		Facing: 32
+		ExitCell: 0,0
+	Exit@4:
+		SpawnOffset: 0,0,0
+		Facing: 224
+		ExitCell: 2,0
+	Production:
+		Produces: Ship
+	PrimaryBuilding:
+	IronCurtainable:
+	-EmitInfantryOnSell:
+	RepairsUnits:
+	RallyPoint:
+	ProductionBar:
+
+SYRD:
+	Inherits: ^Building
+	Infiltratable:
+		Type: SupportPower
+	InfiltrateForSupportPower:
+		Proxy: powerproxy.sonarpulse
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 50
+		Prerequisites: anypower
+		Owner: squirrels,tediz,weasels
+		Hotkey: y
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Shipyard
+		Description: Produces and repairs ships\nand transports.
+	TargetableBuilding:
+		TargetTypes: Ground, Water
+	Building:
+		Power: -30
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+		Adjacent: 8
+		TerrainTypes: Water
+	-GivesBuildableArea:
+	Health:
+		HP: 1000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 4c0
+	Exit@1:
+		SpawnOffset: -1024,1024,0
+		Facing: 160
+		ExitCell: 0,2
+	Exit@2:
+		SpawnOffset: 1024,1024,0
+		Facing: 224
+		ExitCell: 2,2
+	Exit@3:
+		SpawnOffset: -1024,-1024,0
+		Facing: 96
+		ExitCell: 0,0
+	Exit@4:
+		SpawnOffset: 1024,-1024,0
+		Facing: 32
+		ExitCell: 2,0
+	Production:
+		Produces: Ship
+	PrimaryBuilding:
+	IronCurtainable:
+	-EmitInfantryOnSell:
+	RepairsUnits:
+	RallyPoint:
+	ProductionBar:
+
+IRON:
+	Inherits: ^Building
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 71
+		Prerequisites: tlab
+		Owner: tediz
+		BuildLimit: 1
+		Hotkey: c
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Iron Curtain
+		Description: Makes a group of units invulnerable\nfor a short time.\n  Special Ability: Invulnerability\n\nMaximum 1 can be built
+	Building:
+		Power: -200
+		Footprint: xx
+		Dimensions: 2,1
+	RequiresPower:
+	CanPowerDown:
+	DisabledOverlay:
+	Selectable:
+		Bounds: 50,50,0,-12
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	Bib:
+		HasMinibib: Yes
+	IronCurtainable:
+	IronCurtainPower:
+		Icon: invuln
+		ChargeTime: 120
+		Description: Invulnerability
+		LongDesc: Makes a group of units invulnerable\nfor 20 seconds.
+		Duration: 20
+		SelectTargetSound: slcttgt1.aud
+		InsufficientPowerSound: nopowr1.aud
+		BeginChargeSound: ironchg1.aud
+		EndChargeSound: ironrdy1.aud
+		DisplayRadarPing: True
+	SupportPowerChargeBar:
+
+PDOX:
+	Inherits: ^Building
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 70
+		Prerequisites: atek
+		Owner: squirrels
+		BuildLimit: 1
+		Hotkey: o
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Chronosphere
+		Description: Teleports a group of units across the\nmap for a short time.\n  Special Ability: Chronoshift\n\nMaximum 1 can be built
+	Building:
+		Power: -200
+		Footprint: xx xx
+		Dimensions: 2,2
+	RequiresPower:
+	CanPowerDown:
+	DisabledOverlay:
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	Bib:
+		HasMinibib: Yes
+	IronCurtainable:
+	ChronoshiftPower:
+		Icon: chrono
+		ChargeTime: 120
+		Description: Chronoshift
+		LongDesc: Teleports a group of units across\nthe map for 20 seconds.
+		SelectTargetSound: slcttgt1.aud
+		InsufficientPowerSound: nopowr1.aud
+		BeginChargeSound: chrochr1.aud
+		EndChargeSound: chrordy1.aud
+		Duration: 20
+		KillCargo: yes
+		DisplayRadarPing: True
+	SupportPowerChargeBar:
+	-AcceptsSupplies:
+
+TSLA:
+	Inherits: ^Building
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 12
+		Prerequisites: dome, barr
+		Owner: tediz
+		Hotkey: u
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Tesla Coil
+		Description: Advanced base defense. Requires power\nto operate.\n  Strong vs Tanks, Infantry\n  Weak vs Aircraft
+	Building:
+		Power: -150
+		Footprint: _ x
+		Dimensions: 1,2
+	RequiresPower:
+	CanPowerDown:
+	DisabledOverlay:
+	-GivesBuildableArea:
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	Bib:
+		HasMinibib: Yes
+	RenderBuildingCharge:
+		ChargeAudio: tslachg2.aud
+	Armament:
+		Weapon: TeslaZap
+		LocalOffset: 0,0,427
+	AttackCharge:
+		MaxCharges: 3
+		ReloadTime: 120
+	AutoTarget:
+	IronCurtainable:
+	-RenderBuilding:
+	RenderRangeCircle:
+	-AcceptsSupplies:
+	DrawLineToTarget:
+
+AGUN:
+	Inherits: ^Building
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 20
+		Prerequisites: barr
+		Owner: tediz
+		Hotkey: y
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Anti-Aircraft Gun
+		Description: Anti-Air base defense. Requires power\nto operate.\n  Strong vs Aircraft\n  Weak vs Infantry, Tanks
+	Building:
+		Power: -50
+		Footprint: _ x
+		Dimensions: 1,2
+	RequiresPower:
+	CanPowerDown:
+	DisabledOverlay:
+	-GivesBuildableArea:
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Bib:
+		HasMinibib: Yes
+	Turreted:
+		ROT: 15
+		InitialFacing: 224
+	RenderBuildingTurreted:
+	Armament:
+		Weapon: ZSU-23
+		LocalOffset: 432,150,-30, 432,-150,-30
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleFlash:
+	AutoTarget:
+	IronCurtainable:
+	-RenderBuilding:
+	RenderRangeCircle:
+		RangeCircleType: aa
+	-AcceptsSupplies:
+	DrawLineToTarget:
+
+DOME:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 80
+		Prerequisites: proc
+		Owner: squirrels,tediz,weasels
+		Hotkey: r
+	Valued:
+		Cost: 1800
+	Tooltip:
+		Name: Radar Dome
+		Description: Provides an overview of the battlefield.\nCan detect cloaked units.\n  Requires power to operate.
+	Building:
+		Power: -40
+		Footprint: xx xx
+		Dimensions: 2,2
+	RequiresPower:
+	CanPowerDown:
+	DisabledOverlay:
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	Bib:
+	ProvidesRadar:
+	IronCurtainable:
+	Infiltratable:
+		Type: Exploration
+	InfiltrateForExploration:
+	DetectCloaked:
+		Range: 10
+	RenderDetectionCircle:
+
+PBOX:
+	Inherits: ^Building
+	Tooltip:
+		Name: Bunker
+		Description: Static defense with a fireport for \ngarrisoned soldiers.
+	Building:
+		Power: -15
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 12
+		Prerequisites: tent
+		Owner: weasels
+		Hotkey: p
+	-GivesBuildableArea:
+	Valued:
+		Cost: 400
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Bib:
+		HasMinibib: Yes
+	IronCurtainable:
+	-AcceptsSupplies:
+	Turreted:
+		ROT: 255
+	BodyOrientation:
+		QuantizedFacings: 8
+	Cargo:
+		Types: Infantry
+		MaxWeight: 3
+		PipCount: 3
+		InitialUnits: e1
+	-EmitInfantryOnSell:
+	DrawLineToTarget:
+	AttackGarrisoned:
+		Armaments: garrisoned
+		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 86, 86, 86, 86, 86, 86
+	RenderRangeCircle:
+		FallbackRange: 6c0
+	AutoTarget:
+
+# Legacy definitions to keep compatibility with outdated maps
+PBOX.E1:
+	Inherits: PBOX
+	-Buildable:
+	RenderBuilding:
+		Image: PBOX
+
+PBOX.E3:
+	Inherits: PBOX
+	-Buildable:
+	RenderBuilding:
+		Image: PBOX
+
+PBOX.E4:
+	Inherits: PBOX
+	-Buildable:
+	RenderBuilding:
+		Image: PBOX
+
+PBOX.E7:
+	Inherits: PBOX
+	-Buildable:
+	RenderBuilding:
+		Image: PBOX
+
+PBOX.SHOK:
+	Inherits: PBOX
+	-Buildable:
+	RenderBuilding:
+		Image: PBOX
+
+PBOX.SNIPER:
+	Inherits: PBOX
+	-Buildable:
+	RenderBuilding:
+		Image: PBOX
+
+HBOX:
+	Inherits: ^Building
+	Tooltip:
+		Name: Gun Nest
+		Description: Camouflaged static defense.
+	Cloak:
+		InitialDelay: 125
+		CloakDelay: 60
+	DetectCloaked:
+		Range: 6
+	Building:
+		Power: -15
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 14
+		Prerequisites: tent
+		Owner: weasels
+		Hotkey: p
+	-GivesBuildableArea:
+	Valued:
+		Cost: 400
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	IronCurtainable:
+	-AcceptsSupplies:
+	Turreted:
+		ROT: 255
+	BodyOrientation:
+		QuantizedFacings: 8
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+		InitialUnits: e1
+	-EmitInfantryOnSell:
+	DrawLineToTarget:
+	AttackGarrisoned:
+		Armaments: garrisoned
+		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 86, 86, 86, 86, 86, 86
+	RenderRangeCircle:
+		FallbackRange: 6c0
+	AutoTarget:
+
+# Legacy definitions to keep compatibility with outdated maps
+HBOX.E1:
+	Inherits: HBOX
+	-Buildable:
+	RenderBuilding:
+		Image: HBOX
+
+HBOX.E3:
+	Inherits: HBOX
+	-Buildable:
+	RenderBuilding:
+		Image: HBOX
+
+HBOX.E4:
+	Inherits: HBOX
+	-Buildable:
+	RenderBuilding:
+		Image: HBOX
+
+HBOX.E7:
+	Inherits: HBOX
+	-Buildable:
+	RenderBuilding:
+		Image: HBOX
+
+HBOX.SHOK:
+	Inherits: HBOX
+	-Buildable:
+	RenderBuilding:
+		Image: HBOX
+
+HBOX.SNIPER:
+	Inherits: HBOX
+	-Buildable:
+	RenderBuilding:
+		Image: HBOX
+
+GUN:
+	Inherits: ^Building
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 15
+		Prerequisites: tent
+		Owner: weasels
+		Hotkey: t
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Turret
+		Description: Anti-Armor base defense.\n  Strong vs Tanks\n  Weak vs Infantry, Aircraft
+	Building:
+		Power: -40
+	-GivesBuildableArea:
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 7c0
+	Bib:
+		HasMinibib: Yes
+	Turreted:
+		ROT: 12
+		InitialFacing: 50
+	RenderBuildingTurreted:
+	Armament:
+		Weapon: TurretGun
+		LocalOffset: 512,0,112
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleFlash:
+	AutoTarget:
+	IronCurtainable:
+	-RenderBuilding:
+	RenderRangeCircle:
+	-AcceptsSupplies:
+	DrawLineToTarget:
+
+FTUR:
+	Inherits: ^Building
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 13
+		Prerequisites: barr
+		Owner: tediz
+		Hotkey: t
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Flame Turret
+		Description: Anti-Infantry base defense.\n  Strong vs Infantry\n  Weak vs Aircraft
+	Building:
+		Power: -20
+	-GivesBuildableArea:
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Bib:
+		HasMinibib: Yes
+	Turreted:
+		ROT: 255
+		Offset: 0,0,112
+	Armament:
+		Weapon: FireballLauncher
+		LocalOffset: 512,0,0
+	AttackTurreted:
+	BodyOrientation:
+		QuantizedFacings: 8
+	AutoTarget:
+	IronCurtainable:
+	RenderRangeCircle:
+	-AcceptsSupplies:
+	DrawLineToTarget:
+
+SAM:
+	Inherits: ^Building
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 21
+		Prerequisites: dome,barr
+		Owner: tediz
+		Hotkey: y
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: SAM Site
+		Description: Anti-Air base defense. Requires power\nto operate.\n  Strong vs Aircraft\n  Weak vs Infantry, Tanks
+	Building:
+		Power: -40
+		Footprint: xx
+		Dimensions: 2,1
+	RequiresPower:
+	CanPowerDown:
+	DisabledOverlay:
+	-GivesBuildableArea:
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 5c0
+	Bib:
+		HasMinibib: Yes
+	Turreted:
+		ROT: 30
+		InitialFacing: 0
+	RenderBuildingTurreted:
+	Armament:
+		Weapon: Nike
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleFlash:
+	AutoTarget:
+	IronCurtainable:
+	-RenderBuilding:
+	RenderRangeCircle:
+		RangeCircleType: aa
+	-AcceptsSupplies:
+	DrawLineToTarget:
+
+ATEK:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 100
+		Prerequisites: weap,dome
+		Owner: squirrels
+		Hotkey: t
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: SHC Tech Center
+		Description: Provides advanced SHC technologies.
+	ProvidesCustomPrerequisite:
+		Prerequisite: techcenter
+	Building:
+		Power: -200
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	Bib:
+	IronCurtainable:
+	GpsPower:
+		Icon: gps
+		OneShot: yes
+		ChargeTime: 480
+		Description: GPS Satellite
+		LongDesc: Reveals map terrain and provides tactical\ninformation.
+		RevealDelay: 15
+		LaunchSound: satlnch1.aud
+		DisplayTimer: True
+	SupportPowerChargeBar:
+	RequiresPower:
+	DisabledOverlay:
+
+WEAP:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 70
+		Prerequisites: proc
+		Owner: squirrels,tediz,weasels
+		Hotkey: w
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: War Factory
+		Description: Produces vehicles.
+	Building:
+		Power: -30
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 1500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Bib:
+	-RenderBuilding:
+	RenderBuildingWarFactory:
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: 213,-128,0
+		ExitCell: 1,2
+	Production:
+		Produces: Vehicle
+	PrimaryBuilding:
+	IronCurtainable:
+	ProductionBar:
+
+FACT:
+	Inherits: ^Building
+	Building:
+		Power: 0
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Owner: None
+	Health:
+		HP: 1500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 7c0
+	Bib:
+	Production:
+		Produces: Building,Defense
+	IronCurtainable:
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Construction Yard
+		Description: Produces structures.
+	CustomSellValue:
+		Value: 2500
+	BaseBuilding:
+	Transforms:
+		IntoActor: mcv
+		Offset: 1,1
+		Facing: 96
+	ProductionBar@Building:
+		ProductionType: Building
+	ProductionBar@Defense:
+		ProductionType: Defense
+	DeadBuildingState:
+	BaseProvider:
+		Range: 16
+	WithBuildingPlacedAnimation:
+
+PROC:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 20
+		Prerequisites: anypower
+		Owner: squirrels,tediz,weasels
+		Hotkey: e
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Ore Refinery
+		Description: Refines Ore and Gems into credits.
+	Building:
+		Power: -30
+		Footprint: _x_ xxx x==
+		Dimensions: 3,3
+	Health:
+		HP: 900
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	Bib:
+	OreRefinery:
+	StoresOre:
+		PipCount: 17
+		Capacity: 2000
+	IronCurtainable:
+	DrawLineToTarget:
+	CustomSellValue:
+		Value: 600
+	FreeActor:
+		Actor: HARV
+		InitialActivity: FindResources
+		SpawnOffset: 1,2
+		Facing: 64
+	Infiltratable:
+		Type: Cash
+	InfiltrateForCash:
+		Percentage: 50
+		Minimum: 500
+		SoundToVictim: credit1.aud
+	DeadBuildingState:
+	WithIdleOverlay@TOP:
+		Sequence: idle-top
+
+SILO:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 21
+		Prerequisites: proc
+		Owner: squirrels,tediz,weasels
+		Hotkey: o
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Silo
+		Description: Stores excess refined Ore and gems.
+	Building:
+		Power: -10
+	-GivesBuildableArea:
+	Health:
+		HP: 300
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Bib:
+		HasMinibib: Yes
+	RenderBuildingSilo:
+	StoresOre:
+		PipCount: 5
+		Capacity: 1500
+	IronCurtainable:
+	-RenderBuilding:
+	-EmitInfantryOnSell:
+
+HPAD:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: dome
+		Owner: squirrels,tediz,weasels
+		Hotkey: i
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Helipad
+		Description: Produces and reloads helicopters.
+	Building:
+		Power: -10
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 800
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	Bib:
+	Exit@1:
+		SpawnOffset: 0,-256,0
+		ExitCell: 0,0
+		MoveIntoWorld: false
+	RallyPoint:
+	Production:
+		Produces: Helicopter
+	Reservable:
+	IronCurtainable:
+	ProductionBar:
+	PrimaryBuilding:
+
+AFLD:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: dome
+		Owner: squirrels,tediz,weasels
+		Hotkey: i
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Airfield
+		Description: Produces and reloads aircraft.
+	Building:
+		Power: -20
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 7c0
+	Exit:
+		SpawnOffset: 0,170,0
+		ExitCell: 1,1
+		Facing: 192
+		MoveIntoWorld: false
+	Production:
+		Produces: Plane
+	Reservable:
+	IronCurtainable:
+	ProductionBar:
+	SupportPowerChargeBar:
+	PrimaryBuilding:
+
+POWR:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 10
+		Owner: squirrels,tediz,weasels
+		Hotkey: p
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: Power Plant
+		Description: Provides power for other structures.
+	ProvidesCustomPrerequisite:
+		Prerequisite: anypower
+	Building:
+		Power: 100
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Bib:
+	IronCurtainable:
+	DeadBuildingState:
+
+APWR:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 11
+		Prerequisites: dome
+		Owner: squirrels,tediz,weasels
+		Hotkey: l
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Advanced Power Plant
+		Description: Provides double the power of a\nstandard Power Plant.
+	ProvidesCustomPrerequisite:
+		Prerequisite: anypower
+	Building:
+		Power: 200
+		Footprint: ___ xxx xxx
+		Dimensions: 3,3
+	Health:
+		HP: 700
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Bib:
+	IronCurtainable:
+	DeadBuildingState:
+
+STEK:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 100
+		Prerequisites: weap,dome
+		Owner: weasels
+		Hotkey: t
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Weasel Research Facility
+		Description: Provides Weasel advanced technologies.
+	ProvidesCustomPrerequisite:
+		Prerequisite: techcenter
+	Building:
+		Power: -100
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 600
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Bib:
+	IronCurtainable:
+        
+ACAD:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 30
+		Prerequisites: anypower
+		Owner: squirrels
+		Hotkey: b
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: SHC Academy
+		Description: Trains infantry.
+	ProvidesCustomPrerequisite:
+		Prerequisite: troops
+	Building:
+		Power: -20
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 800
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	Bib:
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: -170,810,0
+		ExitCell: 0,2
+	Exit@2:
+		SpawnOffset: -725,640,0
+		ExitCell: 0,2
+	Production:
+		Produces: Infantry
+	PrimaryBuilding:
+	IronCurtainable:
+	ProductionBar:
+
+BARR:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 30
+		Prerequisites: anypower
+		Owner: tediz
+		Hotkey: b
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Tediz Barracks
+		Description: Trains infantry.
+	ProvidesCustomPrerequisite:
+		Prerequisite: troops
+	Building:
+		Power: -20
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 800
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	Bib:
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: -170,810,0
+		ExitCell: 0,2
+	Exit@2:
+		SpawnOffset: -725,640,0
+		ExitCell: 0,2
+	Production:
+		Produces: Infantry
+	PrimaryBuilding:
+	IronCurtainable:
+	ProductionBar:
+
+TENT:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 30
+		Prerequisites: anypower
+		Owner: weasels
+		Hotkey: b
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Weasel Camp
+		Description: Trains infantry.
+	ProvidesCustomPrerequisite:
+		Prerequisite: troops
+	Building:
+		Power: -20
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 800
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	Bib:
+	RallyPoint:
+	Exit@1:
+		SpawnOffset: -42,810,0
+		ExitCell: 0,2
+	Exit@2:
+		SpawnOffset: -725,640,0
+		ExitCell: 0,2
+	Production:
+		Produces: Infantry
+	PrimaryBuilding:
+	IronCurtainable:
+	ProductionBar:
+
+FIX:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 40
+		Prerequisites: weap
+		Owner: squirrels,tediz,weasels
+		Hotkey: m
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Service Depot
+		Description: Repairs vehicles for credits.
+	Building:
+		Power: -30
+		Footprint: _x_ xxx _x_
+		Dimensions: 3,3
+	Health:
+		HP: 800
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	Bib:
+		HasMinibib: Yes
+	Reservable:
+	RallyPoint:
+	IronCurtainable:
+	RepairsUnits:
+		Interval: 10
+	WithRepairAnimation:
+	
+GTWR:
+	Inherits: ^Building
+	Tooltip:
+		Name: Guard Tower
+		Description: Static defense with one gunport.
+	Building:
+		Power: -15
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 10
+		Prerequisites: acad
+		Owner: squirrels
+		Hotkey: p
+	-GivesBuildableArea:
+	Valued:
+		Cost: 450
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	IronCurtainable:
+	-AcceptsSupplies:
+	Turreted:
+		ROT: 255
+	BodyOrientation:
+		QuantizedFacings: 8
+	Cargo:
+		Types: Infantry
+		MaxWeight: 1
+		PipCount: 1
+		InitialUnits: e1
+	-EmitInfantryOnSell:
+	DrawLineToTarget:
+	AttackGarrisoned:
+		Armaments: garrisoned
+		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 86, 86, 86, 86, 86, 86
+	RenderRangeCircle:
+		FallbackRange: 6c0
+	AutoTarget:
+
+ATWR:
+	Inherits: ^Building
+	RequiresPower:
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 11
+		Prerequisites: acad,dome
+		Owner: squirrels
+		Hotkey: w
+	Valued:
+		Cost: 850
+	Tooltip:
+		Name: Armored Guard Tower
+		Description: Advanced base defense.\n  Tougher armor, attacks ground,\nwater, and air units. \n Detects cloaked units.
+	Building:
+		Power: -110
+		Footprint: _ x
+		Dimensions: 1,2
+	-GivesBuildableArea:
+	Health:
+		HP: 800
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 9c0
+	Turreted:
+		ROT: 255
+	Armament:
+		Weapon: Stinger
+		LocalOffset: 256,128,0, 256,-128,0
+		LocalYaw: -100,100
+	AttackTurreted:
+	BodyOrientation:
+		QuantizedFacings: 8
+	AutoTarget:
+	IronCurtainable:
+	DetectCloaked:
+		Range: 5
+	RenderRangeCircle:
+	CanPowerDown:
+
+KENN:
+	Inherits: ^Building
+	Tooltip:
+		Name: Kennel
+	Building:
+		Power: -10
+	-GivesBuildableArea:
+	Health:
+		HP: 300
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	IronCurtainable:
+	-EmitInfantryOnSell:
+	-AcceptsSupplies:
+
+FACF:
+	Inherits: ^Building
+	Valued:
+		Cost: 50
+	Buildable:
+		BuildPaletteOrder: 900
+		Owner: None
+		Hotkey: c
+		Queue: Defense
+	Tooltip:
+		Icon: fake-icon
+		Name: Fake Construction Yard
+		Description: Looks like a Construction Yard.
+	Building:
+		Power: -2
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	-GivesBuildableArea:
+	Health:
+		HP: 30
+	RevealsShroud:
+		Range: 4c0
+	Bib:
+	RenderBuilding:
+		Image: FACT
+	Fake:
+	IronCurtainable:
+	-EmitInfantryOnSell:
+
+WEAF:
+	Inherits: ^Building
+	Valued:
+		Cost: 50
+	Buildable:
+		BuildPaletteOrder: 900
+		Prerequisites: proc
+		Owner: None
+		Hotkey: x
+		Queue: Defense
+	Tooltip:
+		Icon: fake-icon
+		Name: Fake War Factory
+		Description: Looks like a War Factory.
+	Building:
+		Power: -2
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	-GivesBuildableArea:
+	Health:
+		HP: 30
+	RevealsShroud:
+		Range: 4c0
+	Bib:
+	-RenderBuilding:
+	RenderBuildingWarFactory:
+		Image: WEAP
+	Fake:
+	IronCurtainable:
+	-EmitInfantryOnSell:
+
+SYRF:
+	Inherits: ^Building
+	Valued:
+		Cost: 50
+	Buildable:
+		BuildPaletteOrder: 900
+		Prerequisites: anypower
+		Owner: None
+		Hotkey: z
+		Queue: Defense
+	Tooltip:
+		Icon: fake-icon
+		Name: Fake Shipyard
+		Description: Looks like a Shipyard.
+	TargetableBuilding:
+		TargetTypes: Ground, Water
+	Building:
+		Power: -2
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+		Adjacent: 8
+		TerrainTypes: Water
+	-GivesBuildableArea:
+	Health:
+		HP: 30
+	RevealsShroud:
+		Range: 4c0
+	RenderBuilding:
+		Image: SYRD
+	Fake:
+	-EmitInfantryOnSell:
+
+SPEF:
+	Inherits: ^Building
+	Valued:
+		Cost: 50
+	TargetableBuilding:
+		TargetTypes: Ground, Water
+	Buildable:
+		BuildPaletteOrder: 900
+		Prerequisites: anypower
+		Owner: None
+		Hotkey: z
+		Queue: Defense
+	Tooltip:
+		Icon: fake-icon
+		Name: Fake Sub Pen
+		Description: Looks like a Sub Pen.
+	Building:
+		Power: -2
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+		Adjacent: 8
+		TerrainTypes: Water
+	-GivesBuildableArea:
+	Health:
+		HP: 30
+	RevealsShroud:
+		Range: 4c0
+	RenderBuilding:
+		Image: SPEN
+	Fake:
+	-EmitInfantryOnSell:
+
+DOMF:
+	Inherits: ^Building
+	Valued:
+		Cost: 50
+	Tooltip:
+		Icon: fake-icon
+		Name: Fake Radar Dome
+		Description: Looks like a Radar Dome.
+	Buildable:
+		BuildPaletteOrder: 900
+		Prerequisites: proc
+		Owner: None
+		Hotkey: v
+		Queue: Defense
+	Building:
+		Power: -2
+		Footprint: xx xx
+		Dimensions: 2,2
+	-GivesBuildableArea:
+	Health:
+		HP: 30
+	RevealsShroud:
+		Range: 4c0
+	Bib:
+	RenderBuilding:
+		Image: DOME
+	Fake:
+	-EmitInfantryOnSell:
+
+SBAG:
+	Inherits: ^Wall
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 1000
+		Prerequisites: fact
+		Owner: squirrels
+		Hotkey: b
+	Valued:
+		Cost: 25
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Sandbag Wall
+		Description: Stops infantry and blocks enemy fire.\nCan be crushed by tanks.
+	Health:
+		HP: 300
+	Armor:
+		Type: Wood
+	LineBuild:
+		Range: 8
+		NodeTypes: sandbag
+	LineBuildNode:
+		Types: sandbag
+	RenderBuildingWall:
+		Type: sandbag
+
+FENC:
+	Inherits: ^Wall
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 2000
+		Prerequisites: fact
+		Owner: tediz
+		Hotkey: n
+	Valued:
+		Cost: 25
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Barbed Wire Fence
+		Description: Stops infantry and blocks enemy fire.\nCan be crushed by tanks.
+	Health:
+		HP: 300
+	Armor:
+		Type: Wood
+	LineBuild:
+		Range: 8
+		NodeTypes: fence
+	LineBuildNode:
+		Types: fence
+	RenderBuildingWall:
+		Type: fence
+
+BRIK:
+	Inherits: ^Wall
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 4000
+		Prerequisites: fact
+		Owner: squirrels,tediz,weasels
+		Hotkey: w
+	Valued:
+		Cost: 100
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Concrete Wall
+		Description: Stop units and blocks enemy fire.
+	SoundOnDamageTransition:
+		DamagedSound: crmble2.aud
+		DestroyedSound: kaboom30.aud
+	Health:
+		HP: 500
+	Armor:
+		Type: Concrete
+	Wall:
+		CrushClasses: heavywall
+	LineBuild:
+		Range: 8
+		NodeTypes: concrete
+	LineBuildNode:
+		Types: concrete
+	RenderBuildingWall:
+		Type: concrete
+
+CYCL: # PALETTE PROBLEM WITH THIS ONE! FIX IF POSSIBLE!
+	Inherits: ^Wall
+	Valued:
+		Cost: 25
+	CustomSellValue:
+		Value: 0
+	Tooltip:
+		Name: Chain Link Barrier
+		Description: Stops infantry & light vehicles. \nCan be crushed by tanks.
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 3000
+		Prerequisites: fact
+		Owner: weasels
+	Health:
+		HP: 100
+	Armor:
+		Type: Light
+	LineBuild:
+		Range: 8
+		NodeTypes: chain
+	LineBuildNode:
+		Types: chain
+	RenderBuildingWall:
+		Type: chain
+
+BARB:
+	Inherits: ^Wall
+	Health:
+		HP: 100
+	Armor:
+		Type: Wood
+
+WOOD:
+	Inherits: ^Wall
+	Health:
+		HP: 100
+	Armor:
+		Type: Wood
+
+BARRACKS:
+	Tooltip:
+		Name: Infantry Production
+		Description: Infantry Production
+
+VEHICLEPRODUCTION:
+	Tooltip:
+		Name: Vehicle Production
+		Description: Vehicle Production
+
+TECHCENTER:
+	Tooltip:
+		Name: Tech Center
+		Description: Tech Center
+
+ANYPOWER:
+	Tooltip:
+		Name: Power Plant
+		Description: Power Plant
+

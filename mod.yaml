@@ -1,0 +1,192 @@
+Metadata:
+	Title: Command & Conker
+	Description: An OpenRA mod, inspired by Conker's Bad Fur Day.\n\nPlay as the courageous and strategic Squirrel High Command, the ruthless\nand merciless Tediz, or the cunning and cutthroat Weasels.
+	Version: v0
+	Author: Santo C. & Contributors
+
+Folders:
+	.
+	./mods/commconk
+	./mods/commconk/bits
+	./mods/commconk/bits/desert
+	./mods/commconk/uibits
+	~^Content/ra
+
+MapFolders:
+	./mods/commconk/maps: System
+	~^maps/ra: User
+
+Packages:
+	~main.mix
+	redalert.mix
+	conquer.mix
+	hires.mix
+	local.mix
+	sounds.mix
+	speech.mix
+	allies.mix
+	russian.mix
+	temperat.mix
+	snow.mix
+	interior.mix
+	~scores.mix
+	~movies1.mix
+	~movies2.mix
+
+Rules:
+	mods/commconk/rules/misc.yaml
+	mods/commconk/rules/ai.yaml
+	mods/commconk/rules/player.yaml
+	mods/commconk/rules/world.yaml
+	mods/commconk/rules/defaults.yaml
+	mods/commconk/rules/vehicles.yaml
+	mods/commconk/rules/husks.yaml
+	mods/commconk/rules/structures.yaml
+	mods/commconk/rules/infantry.yaml
+	mods/commconk/rules/civilian.yaml
+	mods/commconk/rules/decoration.yaml
+	mods/commconk/rules/aircraft.yaml
+	mods/commconk/rules/ships.yaml
+
+Sequences:
+	mods/commconk/sequences/ships.yaml
+	mods/commconk/sequences/vehicles.yaml
+	mods/commconk/sequences/structures.yaml
+	mods/commconk/sequences/infantry.yaml
+	mods/commconk/sequences/aircraft.yaml
+	mods/commconk/sequences/misc.yaml
+	mods/commconk/sequences/decorations.yaml
+
+Cursors:
+	mods/commconk/cursors.yaml
+
+Chrome:
+	mods/commconk/chrome.yaml
+
+Assemblies:
+	mods/ra/OpenRA.Mods.RA.dll
+	mods/cnc/OpenRA.Mods.Cnc.dll
+	mods/d2k/OpenRA.Mods.D2k.dll
+
+ChromeLayout:
+	mods/commconk/chrome/gameinit.yaml
+	mods/commconk/chrome/ingame.yaml
+	mods/commconk/chrome/ingame-chat.yaml
+	mods/commconk/chrome/ingame-diplomacy.yaml
+	mods/commconk/chrome/ingame-fmvplayer.yaml
+	mods/commconk/chrome/ingame-menu.yaml
+	mods/commconk/chrome/ingame-objectives.yaml
+	mods/commconk/chrome/ingame-observer.yaml
+	mods/commconk/chrome/ingame-observerstats.yaml
+	mods/commconk/chrome/ingame-player.yaml
+	mods/commconk/chrome/mainmenu.yaml
+	mods/commconk/chrome/settings.yaml
+	mods/commconk/chrome/credits.yaml
+	mods/commconk/chrome/lobby.yaml
+	mods/commconk/chrome/lobby-mappreview.yaml
+	mods/commconk/chrome/lobby-playerbin.yaml
+	mods/commconk/chrome/lobby-dialogs.yaml
+	mods/commconk/chrome/color-picker.yaml
+	mods/commconk/chrome/map-chooser.yaml
+	mods/commconk/chrome/create-server.yaml
+	mods/commconk/chrome/serverbrowser.yaml
+	mods/commconk/chrome/connection.yaml
+	mods/commconk/chrome/directconnect.yaml
+	mods/commconk/chrome/replaybrowser.yaml
+	mods/commconk/chrome/dropdowns.yaml
+	mods/commconk/chrome/cheats.yaml
+	mods/commconk/chrome/musicplayer.yaml
+	mods/commconk/chrome/tooltips.yaml
+	mods/commconk/chrome/assetbrowser.yaml
+	mods/commconk/chrome/irc.yaml
+	mods/commconk/chrome/missionbrowser.yaml
+	mods/commconk/chrome/confirmation-dialogs.yaml
+
+Weapons:
+	mods/commconk/weapons.yaml
+	
+Voices:
+	mods/commconk/voices.yaml
+
+Notifications:
+	mods/commconk/notifications.yaml
+	
+TileSets:
+	mods/commconk/tilesets/snow.yaml
+	mods/commconk/tilesets/interior.yaml
+	mods/commconk/tilesets/temperat.yaml
+	mods/commconk/tilesets/desert.yaml
+
+Music:
+	mods/commconk/music.yaml
+
+Movies:
+	mods/commconk/movies1.yaml
+	mods/commconk/movies2.yaml
+
+Translations:
+	mods/commconk/languages/english.yaml
+
+LoadScreen: DefaultLoadScreen
+	Image: mods/commconk/uibits/loadscreen.png
+	InstallerMenuWidget: INSTALL_PANEL
+	TestFiles: allies.mix, conquer.mix, general.mix, interior.mix, redalert.mix, russian.mix, scores.mix, snow.mix, sounds.mix, temperat.mix
+	PackageMirrorList: http://openra.net/packages/ra-mirrors.txt
+	Text: Getting Mepsi Pax..., Excreting the Great Mighty Poo..., Shooting mother-buzzers...
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+
+LobbyDefaults:
+	AllowCheats: true
+	Crates: true
+	StartingUnitsClass: none
+	FragileAlliances: false
+	Shroud: true
+	Fog: true
+
+ChromeMetrics:
+	mods/commconk/metrics.yaml
+
+Fonts:
+	Regular:
+		Font:FreeSans.ttf
+		Size:14
+	Bold:
+		Font:FreeSansBold.ttf
+		Size:14
+	Title:
+		Font:mods/commconk/ZoodRangmah.ttf
+		Size:48
+	BigBold:
+		Font:FreeSansBold.ttf
+		Size:24
+	Tiny:
+		Font:FreeSans.ttf
+		Size:10
+	TinyBold:
+		Font:FreeSansBold.ttf
+		Size:10
+
+LuaScripts:
+	mods/common/lua/utils.lua
+	mods/common/lua/openra.lua
+	mods/common/lua/map.lua
+	mods/common/lua/actor.lua
+	mods/common/lua/team.lua
+	mods/common/lua/media.lua
+	mods/common/lua/mission.lua
+	mods/common/lua/reinforcements.lua
+	mods/common/lua/supportpowers.lua
+	mods/common/lua/rules.lua
+	mods/common/lua/production.lua
+	mods/common/lua/facing.lua
+
+Missions:
+	mods/commconk/missions.yaml
+
+SupportsMapsFrom: ra
+
+NewsUrl: http://openra.net/gamenews

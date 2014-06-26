@@ -1,0 +1,176 @@
+# Classic Red Alert Mod -- Package Manifest
+
+GenericVoice:
+	Variants:
+		squirrels: .squirrels.wav
+		tediz: .tediz.wav
+		weasels: .weasels.wav
+	Voices:
+		Select: select1,select2,select3
+		Move: move1,move2,move3,move4
+		Attack: attack1,attack2,attack3,attack4,attack5,attack6
+		Die: death1,death2,death3,death4,death5,death6,death7
+		Burned: death1,death2,death3,death4,death5,death6,death7
+		Zapped: death1,death2,death3,death4,death5,death6,death7
+
+VehicleVoice: # Improve later by adding radio sound effects in the files.
+	Variants:
+		squirrels: .squirrels.wav
+		tediz: .tediz.wav
+		weasels: .weasels.wav
+	Voices:
+		Select: select1,select2,select3
+		Move: move1,move2,move3,move4
+		Attack: attack1,attack2,attack3,attack4,attack5,attack6
+
+SquirrelsVoice:
+	Variants:
+		squirrels: .squirrels.wav
+		tediz: .squirrels.wav
+		weasels: .squirrels.wav
+	Voices:
+		Select: select1,select2,select3
+		Move: move1,move2,move3,move4
+		Attack: attack1,attack2,attack3,attack4,attack5,attack6
+		Die: death1,death2,death3,death4,death5,death6,death7
+		Burned: death1,death2,death3,death4,death5,death6,death7
+		Zapped: death1,death2,death3,death4,death5,death6,death7
+
+TedizVoice:
+	Variants:
+		squirrels: .tediz.wav
+		tediz: .tediz.wav
+		weasels: .tediz.wav
+	Voices:
+		Select: select1,select2,select3
+		Move: move1,move2,move3,move4
+		Attack: attack1,attack2,attack3,attack4,attack5,attack6
+		Die: death1,death2,death3,death4,death5,death6,death7
+		Burned: death1,death2,death3,death4,death5,death6,death7
+		Zapped: death1,death2,death3,death4,death5,death6,death7
+
+WeaselsVoice:
+	Variants:
+		squirrels: .weasels.wav
+		tediz: .weasels.wav
+		weasels: .weasels.wav
+	Voices:
+		Select: select1,select2,select3
+		Move: move1,move2,move3,move4
+		Attack: attack1,attack2,attack3,attack4,attack5,attack6
+		Die: death1,death2,death3,death4,death5,death6,death7
+		Burned: death1,death2,death3,death4,death5,death6,death7
+		Zapped: death1,death2,death3,death4,death5,death6,death7
+		
+### ORIGINAL RA VOICES BELOW ###
+
+ShokVoice:
+	Voices:
+		Select: jchrge1,jjuice1,jjump1,jpower1
+		Move: jdance1,jyes1
+		Attack: jburn1,jcrisp1,jshock1,jlight1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+EngineerVoice:
+	Voices:
+		Select: eengin1,eyessir1
+		Move: eaffirm1,emovout1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+MedicVoice:
+	Voices:
+		Select: mrespon1,myessir1
+		Move: maffirm1,mmovout1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+MechanicVoice:
+	Voices:
+		Select: mhuh1,mhowdy1,myes1,mrise1
+		Move: mboss1,mhear1
+		Attack: mhotdig1,mwrench1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+SpyVoice:
+	Voices:
+		Select: syessir1,scomnd1
+		Move: sonway1,sindeed1
+		Attack: sking1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+ThiefVoice:
+	Voices:
+		Select: swhat1,syeah1
+		Move: saffirm1,smout1,sokay1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+TanyaVoice:
+	Voices:
+		Select: yo1,yes1,yeah1
+		Move: rokroll1,onit1,cmon1
+		Attack: tuffguy1,bombit1,gotit1
+		Die: tandeth1
+		Burned: tandeth1
+		Zapped: tandeth1
+
+DogVoice:
+	Voices:
+		Select: dogw3px
+		Move: dogy1
+		Attack: dogg5p
+		Die: dogw5,dogw7
+		Burned: dogw6
+		Zapped: dogw6
+
+AntVoice:
+	Voices:
+		Select: antbite
+		Move: antbite
+		Attack: antbite
+		Die: antdie
+		Burned: antdie
+		Zapped: antdie
+
+CivilianMaleVoice:
+	Voices:
+		Select: guyyeah1
+		Move: guyokay1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+CivilianFemaleVoice:
+	Voices:
+		Select: girlyeah
+		Move: girlokay
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+EinsteinVoice:
+	Voices:
+		Select: einah1
+		Move: einok1,einyes1
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
+
+StavrosVoice:
+	Voices:
+		Select: stavcmdr
+		Move: stavcrse, stavyes, stavmov
+		Attack: stavcrse, stavyes
+		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
+		Burned: dedman10
+		Zapped: dedman6
