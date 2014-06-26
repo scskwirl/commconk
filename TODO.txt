@@ -1,8 +1,18 @@
+THIS GAME RUNS IN PLAY RELEASE 6/14
+
 This is a quick to-do list for people to read and see what needs to be done to polish the game a bit.
 
 PLEASE UPDATE AS NECESSARY
 
 ==
+
+Add music - The Heist music, and an instrumental of the Great Mighty Poo song.
+
+Remove parabombs ability from crates.
+
+Increase humvee gun volume
+
+Set shock trooper to Tediz Lab
 
 Reorganize each actor's traits in each YAML file (HOPEFULLY including each actor's given name instead of carry-overs from RA, such as how TLAB is Tediz Lab [techcenter], but Squirrel is still atek [allied tech].).
 
@@ -10,6 +20,9 @@ Redo the color palettes for the following:
 Superfort icon
 C17.shp
 Apache.shp
+chinook flying bunker shp
+
+Realign Chinook flying bunker (tediz) propellers.
 
 Change the color of the Chemical Warrior's "flame" into a green color to represent chemical.
 

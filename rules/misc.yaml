@@ -82,10 +82,6 @@ CRATE:
 	RevealMapCrateAction:
 		SelectionShares: 1
 		Effect: reveal-map
-	SupportPowerCrateAction@parabombs:
-		SelectionShares: 5
-		Proxy: powerproxy.parabombs
-		Effect: parabombs
 	GiveMcvCrateAction:
 		SelectionShares: 2
 		NoBaseSelectionShares: 100

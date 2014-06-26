@@ -655,7 +655,7 @@ SHOK:
 	Buildable:
 		Queue: Infantry
 		BuildPaletteOrder: 30
-		Prerequisites: stek,tsla
+		Prerequisites: tlab,tsla
 		Owner: tediz
 		Hotkey: l
 	Valued:
